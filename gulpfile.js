@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var browserSync = require('browser-sync');
 
 gulp.task('lint', function(){
     return gulp.src('js/src/main.js')
@@ -40,4 +41,15 @@ gulp.task('watch', function(){
     //gulp.watch('scss/**/*.scss', ['scss']);
     gulp.watch('js/src/**/*.js', ['js-dev']);
     gulp.watch('js/src/**/*.hbs', ['js-dev']);
+});
+
+
+gulp.task('serve', ['js-dev'], function(){
+    browserSync({
+        notify: false,
+        server: ['.']
+    });
+    gulp.watch('**/*.html', [browserSync.reload]);
+    gulp.watch('js/src/**/*.js', ['js-dev', browserSync.reload]);
+    gulp.watch('js/src/**/*.hbs', ['js-dev', browserSync.reload]);
 });
