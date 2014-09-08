@@ -1,7 +1,7 @@
 witchgen
 ========
 
-Generative witch house using the Web Audio API.
+Generative [witch house](http://en.wikipedia.org/wiki/Witch_house_(music_genre)) using the Web Audio API.
 
 The product of one of those arrogant Slack chats in #music where attempts to willy-wave about your knowledge of every conceivable genre of electronic music results in you saying you could just write a generator for some of it.
 
